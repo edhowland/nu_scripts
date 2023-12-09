@@ -172,6 +172,13 @@ It is basically a join of the tables produced by the `lsof` command, and the nus
 ## [record](./record/)
 A module to manipulate nu's record
 
+## recursion
+[recursion](./recursion)
+Scripts to make writing recursive commands easier. Includes a trampoline
+based module that will wrap recursive functions and not suffer a stack overflow
+that might occur with large values that would result in a large number of stack
+frames.
+
 ## [system](./system/)
 Currently holds the `clip` command which was previously incorrectly in the standard library of Nushell.
 ```nushell
