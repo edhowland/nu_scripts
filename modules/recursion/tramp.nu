@@ -4,15 +4,9 @@
 # The tramp create command is to be used to return a closure that will perform
 # the trampoline  iteration. This closure can then be passed to  some other
 # command that will execute it  for its own purposes.
-# The tramp bounce command is one such command that will create the closure
+# The tramp test command is one such command that will create the closure
 # and then directly run it. It can be used to test your recursive functions
 # that return thunks or terminating values.
-# An example  is provided in the even-odd.nu source file.
-# Example usage
-# use tramp.nu
-# source even-odd.nu
-#  tramp bounce (even 1234567)
-# false
 
 # Returns a closure that when called will iterate over the returned thunks
 # from the function being trampolined. Must initially call the function
@@ -32,7 +26,7 @@ export def create [thunk: any] {
 # The parameter val must be either a terminating value or closure, which will get run until
 # the terminating value is returned from the current closure which
 # is returned from this function.
-export def bounce [val: any] -> any {
+export def test [val: any] -> any {
   let cl = (create $val)
   do $cl
 }

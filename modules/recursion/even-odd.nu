@@ -9,20 +9,6 @@
 # These functions are meant to be used with the tramp module which implements
 # a trampoline  wrapper closure. Thus, for each even, odd command, the
 #  normal recursive case will actually return a thunk..
-# Usage:
-# use tramp.nu
-# source even-odd.nu
-# tramp bounce (even 1234567)
-# false
-#
-# Be aware that this method of computing  either an even or odd truth actually
-# will take about 1/2 the number of steps as the passed in initial value. even
-# will be called 1/4th of the number of the initial value and odd will
-# be called the other 1/4th of the times.
-# Thus, large values of  n might take some seconds.
-
-# Normally versions of even and odd  here would blow the nu's stack
-
 
 # Return true if number is even. Calls mutually recursive odd function
 # if number is greater than 1.
